@@ -4,24 +4,117 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JW AUTO DRAW｜間取りを、JW_CADに変換する</title>
-<meta name="description" content="3D CADの平面図画像から、Jw_cadの図面データ（.jww）を出力するプログラム「JW AUTO DRAW」の入口ページです。">
+<meta name="description" content="3D CADの平面図から、Jw_cadの図面データ（.jww）を出力するプログラム「JW AUTO DRAW」の公式サイト入口です。概要、対応CAD、使い方、開発の経緯への案内と、運営者情報を掲載しています。">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6180976013091502"
      crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <style>
-  body { margin:0; background:#ebe9e5; color:#15181b; font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; }
-  main { max-width:900px; margin:0 auto; padding:96px 24px; }
-  h1 { font-size:clamp(40px,6vw,72px); font-weight:800; letter-spacing:.02em; margin:0 0 16px; }
-  p { font-size:17px; line-height:1.9; color:#3d4145; margin:0 0 40px; }
-  a.btn { display:inline-block; background:#13254d; color:#fff; text-decoration:none; font-size:16px; letter-spacing:.08em; padding:16px 32px; }
-  a.btn:hover { opacity:.85; }
+  :root { --sans:"IBM Plex Sans JP","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif; --mono:"IBM Plex Mono","IBM Plex Sans JP",Consolas,monospace; --paper:#ebe9e5; --ink:#15181b; --mu:#3d4145; --ln:rgba(21,24,27,.24); --accent:#13254d; --tint:#fbfbfa; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--paper); color:var(--ink); font:400 16.5px/1.95 var(--sans); }
+  b, strong { font-weight:700; }
+  a { color:var(--ink); }
+  .hero { background:#0b0d11; background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px); background-size:80px 80px; color:#fff; }
+  .hero .wrap { max-width:900px; margin:0 auto; padding:88px 24px 72px; }
+  .hero .tag { font-family:var(--mono); font-size:13px; letter-spacing:.3em; color:#d5d9df; margin-bottom:20px; }
+  .hero h1 { font-size:clamp(38px,6vw,64px); font-weight:800; letter-spacing:.02em; line-height:1.25; margin-bottom:18px; }
+  .hero p { font-size:17px; line-height:1.9; color:#e6e9ee; max-width:38em; }
+  main { max-width:900px; margin:0 auto; padding:0 24px; }
+  section { padding:56px 0 8px; }
+  h2 { font-size:clamp(24px,3vw,32px); font-weight:800; line-height:1.4; padding-bottom:14px; border-bottom:1px solid var(--ink); margin-bottom:24px; }
+  p { color:#1f2326; margin-bottom:16px; }
+  ul { list-style:none; padding:0; margin:0 0 16px; }
+  ul li { padding:10px 0 10px 1.2em; text-indent:-1.2em; border-bottom:1px solid var(--ln); color:#1f2326; }
+  ul li::before { content:"— "; color:var(--accent); font-weight:700; }
+  .pages { display:grid; gap:0; border-top:1px solid var(--ink); margin-bottom:16px; }
+  .pages a { display:block; text-decoration:none; padding:20px 4px; border-bottom:1px solid var(--ln); }
+  .pages a:hover { background:var(--tint); }
+  .pages b { display:block; font-size:18px; margin-bottom:4px; }
+  .pages span { display:block; color:var(--mu); font-size:14.5px; line-height:1.7; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-size:15.5px; letter-spacing:.06em; padding:14px 30px; margin:8px 12px 8px 0; }
+  .btn:hover { opacity:.85; }
+  .btn.ghost { background:transparent; color:var(--ink); border:1px solid var(--ink); }
+  footer { max-width:900px; margin:0 auto; padding:64px 24px 48px; color:var(--mu); font-size:14px; }
+  footer .fl { border-top:1px solid var(--ln); padding-top:20px; display:flex; flex-wrap:wrap; gap:8px 28px; }
+  footer a { color:var(--mu); }
 </style>
 </head>
 <body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="tag">JW AUTO DRAW</p>
+    <h1>間取りを、JW_CADに変換する。</h1>
+    <p>3D CADの平面図から、Jw_cadの図面データ（.jww）を出力するプログラム「JW AUTO DRAW」の公式サイトです。このページは入口で、概要・対応CAD・使い方・開発の経緯は下記の各ページで公開しています。</p>
+  </div>
+</header>
+
 <main>
-  <h1>JW AUTO DRAW</h1>
-  <p>間取りを、JW_CADに変換する。<br>
-  3D CADの平面図画像から、Jw_cadの図面データ（.jww）を出力するプログラムです。本サイトは下記のページで公開しています。</p>
-  <a class="btn" href="https://hiro11sbr.github.io/jw-auto-draw/">JW AUTO DRAW のサイトへ</a>
+  <section>
+    <h2>JW AUTO DRAW について</h2>
+    <p>JW AUTO DRAW は、住宅の間取り図（1/100の平面図）を読み取り、Jw_cad で開ける図面データ（.jww）を出力する、Windows 向けのプログラムです。出力は1/50平面詳細図の「下地」で、最後は人の手で仕上げることを前提にしています。</p>
+    <p>読み取りはすべてプログラムの処理だけで行い、AIは使いません。壁の位置は、まず910mmの通りを読み、次に455mm、227.5mmと段階的に細かく読むことで、家具や設備を壁と間違えないようにしています。再現性のある決まった処理で読むため、同じ入力には同じ出力が返ります。</p>
+    <p>プログラムは GitHub で無償公開しています（MITライセンス）。設定もコードも公開しているので、自分の環境に合わせて書き換えることもできます。</p>
+    <p>
+      <a class="btn" href="https://hiro11sbr.github.io/jw-auto-draw/">JW AUTO DRAW のサイトへ</a>
+      <a class="btn ghost" href="https://github.com/hiro11sbr/jw-auto-plan">GitHub で見る</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>できること</h2>
+    <ul>
+      <li>入力：ウォークインホームのプレゼンボード PDF、または平面図の PNG / JPG 画像（1/100相当）</li>
+      <li>読み取り：壁（外壁・内壁）と開口部・建具を、画像から段階的に判定します</li>
+      <li>対応部品：YKK AP APW430、LIXIL EW、パナソニック ベリティス など（部品データは同梱していません）</li>
+      <li>出力：階ごとに .jww ファイルを出力します（1/50平面詳細図の下地）</li>
+      <li>動作環境：Windows（読み取りから作図まで、すべてプログラム処理です）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>サイトのご案内</h2>
+    <div class="pages">
+      <a href="https://hiro11sbr.github.io/jw-auto-draw/">
+        <b>トップページ</b>
+        <span>JW AUTO DRAW の概要、デモ動画、入手方法をまとめています。</span>
+      </a>
+      <a href="https://hiro11sbr.github.io/jw-auto-draw/cad-walkinhome.html">
+        <b>対応CADの詳細（ウォークインホーム）</b>
+        <span>入力の条件、読み取る内容、読み取り方、対応部品、出力、動作環境を項目ごとに説明しています。</span>
+      </a>
+      <a href="https://hiro11sbr.github.io/jw-auto-draw/howto.html">
+        <b>使い方</b>
+        <span>ダウンロードから実行までの手順と、作業の流れを説明しています。</span>
+      </a>
+      <a href="https://hiro11sbr.github.io/jw-auto-draw/story.html">
+        <b>開発の経緯</b>
+        <span>なぜこのプログラムを作ったのか、試行錯誤の過程と考え方をまとめています。</span>
+      </a>
+      <a href="https://hiro11sbr.github.io/jw-auto-draw/faq.html">
+        <b>よくある質問</b>
+        <span>対応範囲や出力の扱いなど、よくある質問への回答です。</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>運営者について</h2>
+    <p>二級建築士。北海道で住宅会社の営業と設計を約10年経験し、現在は個人で JW AUTO DRAW の開発を続けています。日々の開発の様子は Threads と Instagram（@hiro11svr）で発信しています。</p>
+    <p>
+      <a class="btn ghost" href="https://www.threads.com/@hiro11svr">Threads</a>
+      <a class="btn ghost" href="https://www.instagram.com/hiro11svr">Instagram</a>
+    </p>
+  </section>
 </main>
+
+<footer>
+  <div class="fl">
+    <span>© 2026 JW AUTO DRAW</span>
+    <a href="https://hiro11sbr.github.io/privacy.html">プライバシーポリシー</a>
+    <a href="https://hiro11sbr.github.io/jw-auto-draw/">JW AUTO DRAW サイト</a>
+  </div>
+</footer>
+
 </body>
 </html>
